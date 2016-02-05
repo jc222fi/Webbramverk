@@ -1,3 +1,13 @@
+<% if @key.errors.any? %>
+    <div>
+      <ul>
+        <%= @key.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <div>
   <%= form_for @key do |f| %>
     <%= f.label :app_name %>

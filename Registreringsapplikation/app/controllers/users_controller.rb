@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:userid] = @user.id
-      redirect_to apikey_path
+      redirect_to api_key_path
     else
       render :action => "new"
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
         redirect_to keys_path
       end
     else
-      flash[:notice] = "Failed"
+      flash[:notice] = "Failed to login"
       redirect_to root_path
     end
   end
@@ -43,6 +43,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name, :username)
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :username)
   end
 end
