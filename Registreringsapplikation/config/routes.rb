@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get 'keys' => 'api_keys#show', as: :keys
 
+  get   'allusers'   => 'users#show', as: :allusers
   post  'login'   => 'users#login', as: :login
   get   'logout'  => 'users#logout', as: :logout
 

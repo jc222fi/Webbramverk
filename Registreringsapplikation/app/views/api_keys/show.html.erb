@@ -6,7 +6,7 @@
 <% end %>
 
 <div>
-  <h3><%= current_user.name %></h3>
+  <h3>Logged in as <%= current_user.name %></h3>
   <ul>
     <% current_user.api_keys.each do |key| %>
       <li>
@@ -21,5 +21,9 @@
   </ul>
 </div>
 
-<%= link_to "New key", new_api_key_path%>
+<% if current_user.is_admin?%>
+    <%= link_to "Back to users", allusers_path %>
+<% else %>
+    <%= link_to "New key", new_api_key_path %>
+<% end %>
 <%= link_to "Logout", logout_path %>

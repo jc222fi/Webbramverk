@@ -1,0 +1,23 @@
+<h1>All users and keys</h1>
+<div>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.name %>
+        <ul>
+          <% user.api_keys.each do |key| %>
+              <li>
+                <%= key.app_name %>
+                <ul>
+                  <li><%= key.key %></li>
+                  <li><%= button_to "Delete key", key, :method => "delete" %></li>
+                </ul>
+              </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Logout", logout_path %>

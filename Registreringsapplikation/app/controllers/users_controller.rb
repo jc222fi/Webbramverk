@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def index
-    # @users = User.all
+
+  end
+  def show
+    @users = User.all
   end
   def new
     @user = User.new
@@ -20,12 +23,18 @@ class UsersController < ApplicationController
     u = User.find_by_email(params[:email])
     if u && u.authenticate(params[:password])
       session[:userid] = u.id
-      redirect_to keys_path
+
+      if u.is_admin?
+        redirect_to allusers_path
+      else
+        redirect_to keys_path
+      end
     else
       flash[:notice] = "Failed"
       redirect_to root_path
     end
   end
+
   def logout
     session[:userid] = nil
     redirect_to root_path, :notice => "Logged out"

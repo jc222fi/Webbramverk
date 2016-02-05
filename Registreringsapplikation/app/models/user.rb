@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   validates :password,
             :presence => {:message => "You need a password"},
             :length => {:minimum => 6, :message => "Your password needs to contain at least 6 letters"}
+
+  def is_admin?
+    self.role.downcase == "administrator"
+  end
 end

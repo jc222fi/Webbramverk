@@ -24,7 +24,9 @@ class ApiKeysController < ApplicationController
   before_action :require_login
   def destroy
     @key = ApiKey.find(destroy_params[:id])
-    if @key.user == current_user
+
+    if @key.user == current_user or current_user.is_admin?
+
       if @key.destroy
         flash[:notice] = "Api Key was deleted"
         redirect_to keys_path
