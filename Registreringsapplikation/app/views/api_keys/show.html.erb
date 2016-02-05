@@ -1,4 +1,9 @@
 <h1>Api keys</h1>
+<% if flash[:notice] %>
+    <div>
+      <%= flash[:notice] %>
+    </div>
+<% end %>
 
 <div>
   <h3><%= current_user.name %></h3>
@@ -8,6 +13,7 @@
         <%= key.app_name %>
         <ul>
           <li><%= key.key %></li>
+          <li><%= button_to "Delete key", key, :method => "delete" %></li>
         </ul>
       </li>
 
