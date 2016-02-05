@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    # @users = User.all
   end
   def new
     @user = User.new
@@ -9,10 +9,26 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_path
+      session[:userid] = @user.id
+      redirect_to apikey_path
     else
       render :action => "new"
     end
+  end
+
+  def login
+    u = User.find_by_email(params[:email])
+    if u && u.authenticate(params[:password])
+      session[:userid] = u.id
+      redirect_to apikey_path
+    else
+      flash[:notice] = "Failed"
+      redirect_to root_path
+    end
+  end
+  def logout
+    session[:userid] = nil
+    redirect_to root_path, :notice => "Logged out"
   end
 
   private

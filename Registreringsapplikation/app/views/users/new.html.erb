@@ -1,5 +1,16 @@
 <h1>Skapa användare</h1>
 
+<% if @user.errors.any? %>
+    <div>
+      <h2><%= pluralize(@user.errors.count, "Error") %> in the form made it impossible to save:</h2>
+      <ul>
+        <%= @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <%= form_for @user do |f| %>
   <div>
     <%= f.label :name %>
