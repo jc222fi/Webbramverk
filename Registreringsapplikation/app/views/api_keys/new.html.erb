@@ -1,0 +1,8 @@
+<div>
+  <%= form_for @key do |f| %>
+    <%= f.label :app_name %>
+      <%= f.text_field :app_name %>
+      <%= f.submit "Register" %>
+  <% end %>
+  <%= link_to "Back", keys_path %>
+</div>

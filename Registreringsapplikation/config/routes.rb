@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   root 'users#index'
+
   resources :users
-  get 'apikeys' => 'apikeys#show', as: :apikey
+  resources :api_keys
+
+  get 'keys' => 'api_keys#show', as: :keys
 
   post  'login'   => 'users#login', as: :login
   get   'logout'  => 'users#logout', as: :logout

@@ -1,0 +1,19 @@
+<h1>Api keys</h1>
+
+<div>
+  <h3><%= current_user.name %></h3>
+  <ul>
+    <% current_user.api_keys.each do |key| %>
+      <li>
+        <%= key.app_name %>
+        <ul>
+          <li><%= key.key %></li>
+        </ul>
+      </li>
+
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "New key", new_api_key_path%>
+<%= link_to "Logout", logout_path %>

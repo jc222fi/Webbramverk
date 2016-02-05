@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     u = User.find_by_email(params[:email])
     if u && u.authenticate(params[:password])
       session[:userid] = u.id
-      redirect_to apikey_path
+      redirect_to keys_path
     else
       flash[:notice] = "Failed"
       redirect_to root_path
