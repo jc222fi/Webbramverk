@@ -1,28 +1,20 @@
-== README
+== Registreringsapplikation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== Instruktioner för att köra applikationen
 
-Things you may want to cover:
+* Ladda ned applikationen och öppna den i din Rails miljö.
 
-* Ruby version
+* Kör en bundle install i terminal-fönstret.
 
-* System dependencies
+* Kör rake db:migrate för att sätta upp databasen.
 
-* Configuration
+* Kör rake db:seed för att ladda in redan skapade användare.
 
-* Database creation
+* Kör rails s för att starta servern.
 
-* Database initialization
+* Du hittar applikation på http://localhost:3000/
 
-* How to run the test suite
+=== Användaruppgifter
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+admin: johanna@johanna.com
+lösen: password
