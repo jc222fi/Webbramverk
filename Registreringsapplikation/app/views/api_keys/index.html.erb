@@ -26,4 +26,5 @@
 <% else %>
     <%= link_to "New key", new_api_key_path %>
 <% end %>
+<%= link_to "Delete user account", current_user, :method => "delete" %>
 <%= link_to "Logout", logout_path %>

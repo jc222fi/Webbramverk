@@ -40,9 +40,32 @@ class UsersController < ApplicationController
     redirect_to root_path, :notice => "Logged out"
   end
 
+  def destroy
+    @user = User.find(destroy_params[:id])
+
+    if @user == current_user or current_user.is_admin?
+
+      if @user.destroy
+        flash[:notice] = "User was deleted"
+        if current_user.is_admin?
+          redirect_to allusers_path
+        else
+          redirect_to root_path
+        end
+      else
+        flash[:notice] = "User was not deleted"
+      end
+    else
+      flash[:notice] = "Failed"
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
+  end
+  def destroy_params
+    params.permit(:id)
   end
 end

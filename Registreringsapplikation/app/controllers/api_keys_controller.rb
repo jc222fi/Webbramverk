@@ -29,7 +29,7 @@ class ApiKeysController < ApplicationController
 
       if @key.destroy
         flash[:notice] = "Api Key was deleted"
-        redirect_to keys_path
+        redirect_to api_keys_path
       else
         flash[:notice] = "Api Key was not deleted"
       end
