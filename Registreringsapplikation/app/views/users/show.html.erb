@@ -3,7 +3,7 @@
   <ul>
     <% @users.each do |user| %>
       <li>
-        <%= user.name %>
+        <%= user.email %>
         <ul>
           <% user.api_keys.each do |key| %>
               <li>

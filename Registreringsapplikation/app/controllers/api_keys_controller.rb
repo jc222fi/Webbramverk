@@ -1,6 +1,6 @@
 class ApiKeysController < ApplicationController
   before_action :require_login
-  def show
+  def index
     @keys = ApiKey.find_by_user_id(current_user.id)
   end
 
@@ -15,7 +15,7 @@ class ApiKeysController < ApplicationController
     @key.user = current_user
 
     if @key.save
-      redirect_to keys_path
+      redirect_to api_keys_path
     else
       render :action => "new"
     end

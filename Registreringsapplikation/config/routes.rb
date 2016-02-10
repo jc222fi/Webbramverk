@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :users
   resources :api_keys
 
-  get 'keys' => 'api_keys#show', as: :keys
+  #get 'keys' => 'api_keys#show', as: :keys
 
   get   'allusers'   => 'users#show', as: :allusers
   post  'login'   => 'users#login', as: :login

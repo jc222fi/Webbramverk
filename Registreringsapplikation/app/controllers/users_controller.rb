@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:userid] = @user.id
-      redirect_to keys_path
+      redirect_to api_keys_path
     else
       render :action => "new"
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       if u.is_admin?
         redirect_to allusers_path
       else
-        redirect_to keys_path
+        redirect_to api_keys_path
       end
     else
       flash[:notice] = "Failed to login"
