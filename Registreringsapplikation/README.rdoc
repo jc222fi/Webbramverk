@@ -4,7 +4,7 @@
 
 * Ladda ned applikationen och öppna den i din Rails miljö.
 
-* Kör en bundle install i terminal-fönstret.
+* Kör en bundle install i terminal-fönstret. Om du använder Cloud9 kan du behöva skriva bundle update istället.
 
 * Kör rake db:migrate för att sätta upp databasen.
 
