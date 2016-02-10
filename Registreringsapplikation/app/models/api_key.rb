@@ -2,8 +2,7 @@ class ApiKey < ActiveRecord::Base
   belongs_to :user
   before_create :generate_key
   validates :app_name,
-            :presence => {:message => "You need to include an app name"},
-            :length => {:minimum => 2, :message => "You need at least 2 letters in your app name"}
+            :length => {:minimum => 2, :message => ", you need at least 2 letters in your app name"}
 
   private
   def generate_key
