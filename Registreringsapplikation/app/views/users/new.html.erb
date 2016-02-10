@@ -4,7 +4,7 @@
     <div>
       <h2><%= pluralize(@user.errors.count, "Error") %> in the form made it impossible to save:</h2>
       <ul>
-        <%= @user.errors.full_messages.each do |msg| %>
+        <%= @user.errors.messages.values.each do |msg| %>
         <li><%= msg %></li>
         <% end %>
       </ul>
@@ -12,17 +12,9 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
     <div>
       <%= f.label :email %>
       <%= f.text_field :email %>
-    </div>
-    <div>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
     </div>
     <div>
       <%= f.label :password %>
