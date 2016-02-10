@@ -4,12 +4,10 @@ class ApiKeysController < ApplicationController
     @keys = ApiKey.find_by_user_id(current_user.id)
   end
 
-  before_action :require_login
   def new
     @key = ApiKey.new
   end
 
-  before_action :require_login
   def create
     @key = ApiKey.new(key_params)
     @key.user = current_user
@@ -21,7 +19,6 @@ class ApiKeysController < ApplicationController
     end
   end
 
-  before_action :require_login
   def destroy
     @key = ApiKey.find(destroy_params[:id])
 
