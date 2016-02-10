@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   end
   def show
+    unless current_user.is_admin?
+      redirect_to api_keys_path
+    end
     @users = User.all
   end
   def new
