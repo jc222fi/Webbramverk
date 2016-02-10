@@ -4,8 +4,8 @@
     <div>
       <h2><%= pluralize(@user.errors.count, "Error") %> in the form made it impossible to save:</h2>
       <ul>
-        <%= @user.errors.messages.values.each do |msg| %>
-        <li><%= msg %></li>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
