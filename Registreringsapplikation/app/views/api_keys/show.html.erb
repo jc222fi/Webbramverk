@@ -6,7 +6,7 @@
 <% end %>
 
 <div>
-  <h3>Logged in as <%= current_user.name %></h3>
+  <h3>Logged in as <%= current_user.email %></h3>
   <ul>
     <% current_user.api_keys.each do |key| %>
       <li>
