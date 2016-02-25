@@ -40,6 +40,7 @@ class SessionsController < ApplicationController
     response.status = 401
     render :json => { :message => 'Not logged in' }
   end
+
   def unauthorized_key
     response.status = 401
     render :json => { :message => 'Wrong key' }
@@ -47,7 +48,7 @@ class SessionsController < ApplicationController
 
   def test
 
-    if check_end_user_auth && check_api_key_auth(params[:key])
+    if check_end_user_auth #&& check_api_key_auth(params[:key])
       response.status = 200
       render :json => session['end_user']
     end

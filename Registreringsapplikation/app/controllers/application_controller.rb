@@ -25,7 +25,6 @@ class ApplicationController < ActionController::Base
 
       return false
     end
-
     session['end_user'] = user
   end
 

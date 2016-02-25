@@ -8,6 +8,7 @@ class CreateGames < ActiveRecord::Migration
       t.integer 'away_score'
 
       t.belongs_to :end_user, index: true
+      t.belongs_to :location, index: true
 
       t.timestamps null: false
     end

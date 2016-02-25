@@ -31,6 +31,15 @@ Rails.application.routes.draw do
   get "/unauthorized" => "sessions#unauthorized", :as => :unauthorized
   get "/unauthorized_key" => "sessions#unauthorized_key", :as => :unauthorized_key
 
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :games
+      resources :locations
+
+      root to: 'games#index'
+    end
+  end
+
 
   # Example resource route with options:
   #   resources :products do
