@@ -24,6 +24,14 @@ Rails.application.routes.draw do
   post  'login'   => 'users#login', as: :login
   get   'logout'  => 'users#logout', as: :logout
 
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
+  get "/test" => 'sessions#test'
+  get "/authenticate" => "sessions#authenticate"
+  get "/unauthorized" => "sessions#unauthorized", :as => :unauthorized
+  get "/unauthorized_key" => "sessions#unauthorized_key", :as => :unauthorized_key
+
+
   # Example resource route with options:
   #   resources :products do
   #     member do

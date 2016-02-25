@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
 
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth["provider"], auth["uid"])
+    user = EndUser.find_by_provider_and_uid(auth["provider"], auth["uid"]) || EndUser.create_with_omniauth(auth["provider"], auth["uid"])
 
     user.name = auth["info"]["name"] # could be updated (better check when new logins)
     user.token = auth["credentials"]["token"] # github provider token should not give out
@@ -20,9 +20,15 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
-
-
+    user = EndUser.try_get_logged_in_user(request.headers)
+    if user.nil?
+      response.status = 401
+      render :nothing => true
+    else
+      user.expire
+      response.status = 200
+      render :nothing => true
+    end
   end
 
   def authenticate
@@ -30,8 +36,39 @@ class SessionsController < ApplicationController
     redirect_to "/auth/github"
   end
 
+  def unauthorized
+    response.status = 401
+    render :json => { :message => 'Not logged in' }
+  end
+  def unauthorized_key
+    response.status = 401
+    render :json => { :message => 'Wrong key' }
+  end
+
+  def test
+
+    if check_end_user_auth && check_api_key_auth(params[:key])
+      response.status = 200
+      render :json => session['end_user']
+    end
+
+=begin
+    user = EndUser.try_get_logged_in_user(request.headers)
+
+    if user.nil?
+      response.status = 401
+      render :nothing => true
+    else
+      response.status = 200
+      render :json => user
+    end
+=end
+
+  end
 
 
+
+=begin
   # This is just for testing stuff
   def test
     # check for the headers
@@ -39,7 +76,7 @@ class SessionsController < ApplicationController
     user = nil
     unless auth_token.nil?
       # should test against expires-date also
-      user = User.find_by_auth_token(auth_token) || nil
+      user = EndUser.find_by_auth_token(auth_token) || nil
     end
 
     if(user.nil?)
@@ -49,7 +86,6 @@ class SessionsController < ApplicationController
       response.status = 200
       render :json => user
     end
-
-
   end
+=end
 end

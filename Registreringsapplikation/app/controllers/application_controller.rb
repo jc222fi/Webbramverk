@@ -4,15 +4,35 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   private
-  helper_method :current_user
+  helper_method :current_user, :check_end_user_auth
 
   def current_user
     @current_user ||= User.find(session[:userid]) if session[:userid]
-    #@current_user = User.find(1)
   end
   def require_login
     if current_user.nil? then
       redirect_to root_path
+    end
+  end
+
+  #Helper for checking if end user is logged in
+  def check_end_user_auth
+    user = EndUser.try_get_logged_in_user(request.headers)
+
+    if user.nil?
+      response.status = 401
+      redirect_to unauthorized_path
+
+      return false
+    end
+
+    session['end_user'] = user
+  end
+
+  def check_api_key_auth(key_value)
+    if ApiKey.find_by_key(key_value).nil?
+      redirect_to unauthorized_key_path
+      return false
     end
   end
 end
