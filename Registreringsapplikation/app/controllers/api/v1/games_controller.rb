@@ -7,7 +7,7 @@ class Api::V1::GamesController < ApplicationController
 
 =begin
     games.each do |game|
-      game.href = api_v1_location_url(location.id)
+      game.href = api_v1_locations_url(location.id)
     end
 =end
 
@@ -22,14 +22,45 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
-    respond_with Game.create(params[:game])
+    game = Game.new(game_params)
+
+    if game.save
+      response.status = 201
+      render :json => game
+    else
+      response.status = 400
+      render :json => {message: 'Something went wrong, game was not created'}
+    end
   end
 
   def update
-    respond_with Game.update(params[:id], params[:game])
+    game = Game.find(update_destroy_params[:id])
+    if game.nil?
+      response.status = 404
+      render :json => {message: 'Game was not found'}
+    else
+      response.status = 200
+      render :json => game
+    end
   end
 
   def destroy
-    respond_with Game.destroy(params[:id])
+    game = Game.find(update_destroy_params[:id])
+
+    if game.destroy
+      response.status = 200
+      render :json => {message: 'Game was deleted successfully'}
+    else
+      response.status = 400
+      render :json => {message: 'Something went wrong, game was not deleted'}
+    end
+  end
+
+  private
+  def game_params
+    params.require(:game).permit(:home_score, :away_score)
+  end
+  def update_destroy_params
+    params.permit(:id)
   end
 end
