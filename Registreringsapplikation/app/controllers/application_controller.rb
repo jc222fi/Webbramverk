@@ -28,10 +28,18 @@ class ApplicationController < ActionController::Base
     session['end_user'] = user
   end
 
+  def restrict_access
+    authenticate_or_request_with_http_token do |token, options|
+      ApiKey.exists?(key: token)
+    end
+  end
+
+=begin
   def check_api_key_auth(key_value)
     if ApiKey.find_by_key(key_value).nil?
       redirect_to unauthorized_key_path
       return false
     end
   end
+=end
 end

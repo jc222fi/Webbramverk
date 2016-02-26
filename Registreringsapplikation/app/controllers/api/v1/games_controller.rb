@@ -1,5 +1,5 @@
 class Api::V1::GamesController < ApplicationController
-  #before_filter :restrict_access
+  before_filter :restrict_access
   respond_to :json
 
   def index
@@ -29,13 +29,5 @@ class Api::V1::GamesController < ApplicationController
 
   def destroy
     respond_with Game.destroy(params[:id])
-  end
-
-
-  private
-  def restrict_access
-    authenticate_or_request_with_http_token do |token, options|
-      ApiKey.exists?(key: token)
-    end
   end
 end
