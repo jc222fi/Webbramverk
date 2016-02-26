@@ -3,14 +3,24 @@ class Api::V1::LocationsController < ApplicationController
   respond_to :json
 
   def index
-    locations = Location.all
-
+    if params[:search].present?
+      locations = Location.near(params[:search], 50, :order => :distance)
+    else
+      locations = Location.all
+    end
     response.status = 200
     render :json => locations
   end
 
   def show
-    respond_with Location.find(params[:id])
+    if params[:id].present?
+      locations = Location.find(params[:id])
+      response.status = 200
+      render :json => locations
+    else
+      response.status = 404
+      render :json => {message: 'No locations found'}
+    end
   end
 
   def create

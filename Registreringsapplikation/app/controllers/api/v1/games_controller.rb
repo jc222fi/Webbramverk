@@ -16,7 +16,9 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def show
-    respond_with Game.find(params[:id])
+    game = Game.find(params[:id])
+    response.status = 200
+    render :json => game
   end
 
   def create

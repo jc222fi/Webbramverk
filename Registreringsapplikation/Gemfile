@@ -30,6 +30,8 @@ gem 'omniauth-github'
 
 gem 'responders', '~> 2.0'
 
+gem 'geocoder'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
