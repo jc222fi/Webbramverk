@@ -811,15 +811,269 @@ Hemmamatch, Bortamatch,
         name="tag"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="081c85ab-4776-404c-aa81-9eeceb05a8d6"
+            name="id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9de197e6-8d7b-4ea2-a035-05fbaebf751e"
+            name="name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="eed35fa5-d794-4fff-99aa-a88f04167d27"
-        name="result"
+        name="game"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="711d9deb-691a-48a9-acc2-d48dc9f598f9"
+            isDerived="false"
+            sourceEndRoleName="game"
+            targetEndRoleName="tag"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="aa9d3431-20c2-4ba4-ae70-a1be46152cb5"
+              LastKnownName="tag"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="175302fe-ab81-42e8-9b1f-cb36c45502d3"
+                  name="game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a7b5f418-0d4a-4fcd-aa0c-c3369b696059"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d6d8ada3-da9b-4525-a38c-3da939e1b1a3"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fd7c4712-959d-400c-96fb-4c17e8d5a79f"
+                  name="tag"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="05e6abdc-a21d-4d3a-bb97-c6d2d148ae86"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3ca66fbc-b546-4da1-9498-278d0f22836e"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5f12aeb7-abbc-4e24-a836-fa4d6862eb00"
+            isDerived="false"
+            sourceEndRoleName="game"
+            targetEndRoleName="hometeam"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="11c03a35-8de7-479b-8140-f5446792880d"
+              LastKnownName="hometeam"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="79998544-e0e7-411f-be7b-c10d050cd5dd"
+                  name="game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9ad21f8c-a116-40b8-a17c-743e37c498ba"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c76e3a99-4d96-42ab-b876-0715e6a3a6c4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c88e5902-138a-41c7-a112-24e47ae0e891"
+                  name="hometeam"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="87bfb35b-e63c-4784-aaec-7b9f863e1ae2"
+            isDerived="false"
+            sourceEndRoleName="game"
+            targetEndRoleName="awayteam"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="416600c4-e355-422b-be3e-30b690ab5ec3"
+              LastKnownName="awayteam"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9337821b-5185-4237-abe8-764a3cd5cd46"
+                  name="game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="924a4ad2-2770-4d5b-9997-4635ae9e43d7"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3c635cce-7895-4da0-bab9-3864b9341028"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="71b2b8eb-fd0e-42ae-870a-f19a1f2bc040"
+                  name="awayteam"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="db603dc3-5279-4d1a-8aeb-40b4fed5e445"
+            name="id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="8fdd822b-1892-4ba4-9794-a35b3d0a5be9"
+            name="winner"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="dc1b315a-e341-4cc0-8982-2a444083f726"
+            name="home_team"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="8080a327-7e14-4485-8159-7aa3088cde08"
+            name="away_team"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="bc4e72ed-0b78-41fc-a067-c0da59b99427"
+            name="score"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -832,6 +1086,17 @@ Hemmamatch, Bortamatch,
           <property
             Id="54d8fd89-ac7b-4982-89e9-598fb7993810"
             name="name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="7b90096d-7966-4edd-8760-28a9ec99f99e"
+            name="id"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1021,10 +1286,64 @@ Hemmamatch, Bortamatch,
     <packageHasNamedElement>
       <class
         Id="02839469-5b86-4aa3-8d33-ed63bcc1c284"
-        name="location1"
+        name="location"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="e3da56c6-448e-4fe0-97e9-99c7d05d641d"
+            isDerived="false"
+            sourceEndRoleName="location"
+            targetEndRoleName="game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eed35fa5-d794-4fff-99aa-a88f04167d27"
+              LastKnownName="game"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="475d5923-ba7e-4795-ac54-d8aabbd96783"
+                  name="location"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="06a4c71f-c43d-4d68-ad66-06386a2134ef"
+                  name="game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d052d95a-55de-48d1-be08-52fa65bfa523"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2a37ac87-25b2-40f7-866d-60bf0ebce383"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="e11cebad-9250-4525-9132-e78c339eda6d"
@@ -1061,6 +1380,285 @@ Hemmamatch, Bortamatch,
             isComposite="false" />
           <property
             Id="370462f3-0c3f-4636-9ae5-2f3792038d49"
+            name="id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="282a6fa0-931d-4172-a4a4-9c77600ecd4b"
+        name="end_user"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="a523b24d-02c6-4f69-98a7-0ff30ddd5d86"
+            isDerived="false"
+            sourceEndRoleName="end_user"
+            targetEndRoleName="game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eed35fa5-d794-4fff-99aa-a88f04167d27"
+              LastKnownName="game"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8b1bc738-305a-4b0a-a3b1-4b10dccef77b"
+                  name="end_user"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4028548f-3034-4766-8599-f2b07902b039"
+                  name="game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="da2cffb6-ef70-49c0-97a4-843bdfaaaf8b"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="925b0f12-f750-43b2-8c64-afd8de8201ab"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="3346033c-578f-4b01-9b78-175762ded847"
+            name="id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="cbe0846c-1064-4fdd-8d2c-0db5a198fc3b"
+            name="auth_token"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="bde2986a-b944-4f01-b55e-e6c13d31ec7f"
+            name="provider"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6c4a9e82-e4f2-4bdb-a52c-5f3549da61e8"
+            name="token"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1868141b-5d80-49e3-9ea8-d3abee8561eb"
+            name="token_expires"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0f87f9be-85ec-4847-95f1-bdb07c512aaf"
+            name="name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="11c03a35-8de7-479b-8140-f5446792880d"
+        name="hometeam"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ecb64422-03ef-4ef6-ac57-e8df11200c48"
+            isDerived="false"
+            sourceEndRoleName="hometeam"
+            targetEndRoleName="team"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="3ac9e988-230d-4b85-9f72-75c2ed48bafe"
+              LastKnownName="team"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08ace58a-b7d8-430e-bedc-c2071d01bbd4"
+                  name="hometeam"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ae1ed74d-27ee-40fc-87c9-ee043408e49e"
+                  name="team"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="ec7c74ff-0055-40db-b6c6-1ea8a4c21e6f"
+            name="team_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="522e5bda-389b-4555-8d3b-f9d50628a0fb"
+            name="id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="416600c4-e355-422b-be3e-30b690ab5ec3"
+        name="awayteam"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="d62062b3-ceec-474e-ac7a-a08ee6af3711"
+            isDerived="false"
+            sourceEndRoleName="awayteam"
+            targetEndRoleName="team"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="3ac9e988-230d-4b85-9f72-75c2ed48bafe"
+              LastKnownName="team"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d30fe289-ee03-4fb0-a7f3-f68e79b0447d"
+                  name="awayteam"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ef5eab16-69e0-49c5-b98b-920e7b8de992"
+                  name="team"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="d424a190-077b-4994-beaa-7e5462081e4c"
+            name="team_id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="218ded5a-d2cf-47b6-bdcb-fbf73eee464a"
             name="id"
             isLeaf="false"
             isStatic="false"

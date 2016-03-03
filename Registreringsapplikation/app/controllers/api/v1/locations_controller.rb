@@ -24,14 +24,45 @@ class Api::V1::LocationsController < ApplicationController
   end
 
   def create
-    respond_with Location.create(params[:name])
+    location = Location.new(location_params)
+
+    if location.save
+      response.status = 201
+      render :json => location
+    else
+      response.status = 400
+      render :json => {message: 'Something went wrong, location was not created'}
+    end
   end
 
   def update
-    respond_with Location.update(params[:id], params[:name])
+    location = Location.find(update_destroy_params[:id])
+    if location.nil?
+      response.status = 404
+      render :json => {message: 'Location was not found'}
+    else
+      response.status = 200
+      render :json => location
+    end
   end
 
   def destroy
-    respond_with Location.destroy(params[:id])
+    location = Location.find(update_destroy_params[:id])
+
+    if location.destroy
+      response.status = 200
+      render :json => {message: 'Location was deleted successfully'}
+    else
+      response.status = 400
+      render :json => {message: 'Something went wrong, location was not deleted'}
+    end
+  end
+
+  private
+  def location_params
+    params.require(:location).permit(:address)
+  end
+  def update_destroy_params
+    params.permit(:id)
   end
 end
