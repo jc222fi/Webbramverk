@@ -1,23 +1,23 @@
-class Api::V1::TeamsController < ApplicationController
+class Api::V1::HomeTeamsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_filter :restrict_access
   respond_to :json
 
   def index
-    teams = Team.all
+    teams = HomeTeam.all
     
     response.status = 200
     render :json => teams
   end
 
   def show
-    team = Team.find(params[:id])
+    team = HomeTeam.find(params[:id])
     response.status = 200
     render :json => team
   end
 
   def create
-    team = Team.new(team_params)
+    team = HomeTeam.new(team_params)
 
     if team.save
       response.status = 201
@@ -29,7 +29,7 @@ class Api::V1::TeamsController < ApplicationController
   end
 
   def update
-    team = Team.find(update_destroy_params[:id])
+    team = HomeTeam.find(update_destroy_params[:id])
     if team.nil?
       response.status = 404
       render :json => {message: 'Team was not found'}
@@ -41,7 +41,7 @@ class Api::V1::TeamsController < ApplicationController
   end
 
   def destroy
-    team = Team.find(update_destroy_params[:id])
+    team = HomeTeam.find(update_destroy_params[:id])
 
     if team.destroy
       response.status = 200

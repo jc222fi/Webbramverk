@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :games
       resources :locations
+      resources :tags
+      resources :home_teams
+      resources :away_teams
 
       root to: 'games#index'
 

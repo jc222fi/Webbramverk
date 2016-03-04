@@ -1,4 +1,5 @@
 class Api::V1::GamesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_filter :restrict_access
   respond_to :json
 
@@ -22,7 +23,20 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
-    game = Game.new(game_params)
+    game = Game.new(
+          home_score: game_params[:home_score],
+          away_score: game_params[:away_score]
+    )
+    home_team = HomeTeam.find(game_params[:home_team_id])
+    away_team = AwayTeam.find(game_params[:away_team_id])
+    game.home_team = home_team
+    game.away_team = away_team
+    
+    location = Location.find(game_params[:location_id])
+    game.location = location
+    
+    end_user = EndUser.find(game_params[:end_user_id])
+    game.end_user = end_user
 
     if game.save
       response.status = 201
@@ -39,8 +53,29 @@ class Api::V1::GamesController < ApplicationController
       response.status = 404
       render :json => {message: 'Game was not found'}
     else
+      home_score = game_params[:home_score]
+      away_score = game_params[:away_score]
+      game.home_score = home_score
+      game.away_score = away_score
+      
+      home_team = HomeTeam.find(game_params[:home_team_id])
+      away_team = AwayTeam.find(game_params[:away_team_id])
+      game.home_team = home_team
+      game.away_team = away_team
+      
+      location = Location.find(game_params[:location_id])
+      game.location = location
+      
+      end_user = EndUser.find(game_params[:end_user_id])
+      game.end_user = end_user
+      
+      if game.save
       response.status = 200
       render :json => game
+      else
+        response.status = 400
+        render :json => {message: 'Something went wrong, game was not updated'}
+      end
     end
   end
 
@@ -58,7 +93,7 @@ class Api::V1::GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:home_score, :away_score)
+    params.permit(:home_team_id, :away_team_id, :home_score, :away_score, :location_id, :end_user_id)
   end
   def update_destroy_params
     params.permit(:id)

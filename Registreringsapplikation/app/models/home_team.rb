@@ -1,7 +1,6 @@
 class HomeTeam < ActiveRecord::Base
-
-  belongs_to :team
-
-  #has_one :team
-
+  validates :name,
+            :presence => true
+            
+  validates_uniqueness_of :name, :case_sensitive => false
 end

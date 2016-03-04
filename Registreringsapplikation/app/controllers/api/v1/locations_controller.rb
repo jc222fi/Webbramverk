@@ -1,4 +1,5 @@
 class Api::V1::LocationsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_filter :restrict_access
   respond_to :json
 
@@ -41,6 +42,7 @@ class Api::V1::LocationsController < ApplicationController
       response.status = 404
       render :json => {message: 'Location was not found'}
     else
+      location.update(location_params)
       response.status = 200
       render :json => location
     end
@@ -60,7 +62,7 @@ class Api::V1::LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:address)
+    params.permit(:address)
   end
   def update_destroy_params
     params.permit(:id)
