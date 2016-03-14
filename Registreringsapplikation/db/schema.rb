@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 20160304030717) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.integer  "home_team_id"
-    t.integer  "away_team_id"
     t.integer  "home_score"
     t.integer  "away_score"
     t.integer  "end_user_id"
     t.integer  "location_id"
+    t.integer  "home_team_id"
+    t.integer  "away_team_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -82,9 +82,11 @@ ActiveRecord::Schema.define(version: 20160304030717) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name",       limit: 40, null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "name",         limit: 40, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "home_team_id"
+    t.integer  "away_team_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -16,6 +16,7 @@ awayteam = AwayTeam.create( name: "Göteborgs basket" )
 game.home_team = hometeam
 game.away_team = awayteam
 
+Location.delete_all
 location1 = Location.create(:address => "Eiffel Tower")
 location2 = Location.create(:address => "Statue of Liberty")
 
@@ -26,5 +27,6 @@ game.location = location1
 
 game.save
 
+Tag.delete_all
 tag = Tag.create(:name => "Ladies div2")
 tag.save
