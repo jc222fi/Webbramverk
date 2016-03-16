@@ -31,13 +31,19 @@ Rails.application.routes.draw do
   get "/unauthorized" => "sessions#unauthorized", :as => :unauthorized
   get "/unauthorized_key" => "sessions#unauthorized_key", :as => :unauthorized_key
 
+  get '/api/v1/games/tag/:id' => 'api/v1/games#tag', :as => :games_tag
+  
+  get '/api/v1/games/search_for/:team_id' => 'api/v1/games#search_for', :as => :games_search_for
+  
+  post '/api/v1/games/:id/tag/:tag_id' => 'api/v1/games#add_tag', :as => :games_add_tag
+  delete '/api/v1/games/:id/tag/:tag_id' => 'api/v1/games#remove_tag', :as => :games_remove_tag
+
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :games
       resources :locations
       resources :tags
-      resources :home_teams
-      resources :away_teams
+      resources :teams
 
       root to: 'games#index'
 

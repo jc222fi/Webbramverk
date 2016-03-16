@@ -1,9 +1,12 @@
 class Team < ActiveRecord::Base
+  
+  attr_accessor :href
+  
   #belongs_to :away_team
   #belongs_to :home_team
   
-  belongs_to :home_team, :class_name => 'Team' # Added by gammelsmurf
-  belongs_to :away_team, :class_name => 'Team' # Added by the only smurfan
+  has_one :home_team, :class_name => 'Game', :foreign_key => 'home_team_id'
+  has_one :away_team, :class_name => 'Game', :foreign_key => 'away_team_id'
   
   validates :name,
             :presence => true

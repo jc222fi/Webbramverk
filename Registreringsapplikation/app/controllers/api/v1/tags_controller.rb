@@ -4,11 +4,32 @@ class Api::V1::TagsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Tag.all
+    
+    if tag_params[:offset] == nil || tag_params[:limit] == nil
+      response.status = 400
+      render :json => {message: 'Please enter limit and offset parameters'}
+    else
+      
+      tags = Tag.order('created_at DESC').limit(tag_params[:limit]).offset(tag_params[:offset])
+    
+      tags.each do |tag|
+        tag.href = api_v1_tag_url(tag.id)
+      end
+      response.status = 200
+      render :json => tags, methods: [:href]
+      
+    end
+    
   end
 
   def show
-    respond_with Tag.find(params[:id])
+    tag Tag.find(params[:id])
+    tag.href = api_v1_tag_url(tag.id)
+    response.status = 200
+    render :json => {
+        :tags => [tag],
+    }, methods: [:href]
+    
   end
 
   def create
@@ -16,7 +37,11 @@ class Api::V1::TagsController < ApplicationController
 
     if tag.save
       response.status = 201
-      render :json => tag
+      tag.href = api_v1_tag_url(tag.id)
+      render :json => {
+          :tags => [tag],
+      }, methods: [:href]
+      
     else
       response.status = 400
       render :json => {message: 'Tag already exists'}
@@ -31,7 +56,10 @@ class Api::V1::TagsController < ApplicationController
     else
       tag.update(tag_params)
       response.status = 200
-      render :json => tag
+      tag.href = api_v1_tag_url(tag.id)
+      render :json => {
+          :tags => [tag],
+      }, methods: [:href]
     end
   end
 
@@ -49,7 +77,7 @@ class Api::V1::TagsController < ApplicationController
   
   private
   def tag_params
-    params.permit(:name)
+    params.permit(:name, :limit, :offset)
   end
   def update_destroy_params
     params.permit(:id)

@@ -9,9 +9,15 @@
 User.delete_all
 u1 = User.create(:role => "administrator", :email => "johanna@johanna.com", :password => "password", :password_confirmation => "password")
 
+ApiKey.delete_all
+key = ApiKey.create(:app_name => "coola appen")
+key.user = u1
+key.save
+
+
 game = Game.create( home_score: "67", away_score: "55" )
-hometeam = HomeTeam.create( name: "Borås basket" )
-awayteam = AwayTeam.create( name: "Göteborgs basket" )
+hometeam = Team.create( name: "Borås basket" )
+awayteam = Team.create( name: "Göteborgs basket" )
 
 game.home_team = hometeam
 game.away_team = awayteam

@@ -82,11 +82,9 @@ ActiveRecord::Schema.define(version: 20160304030717) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name",         limit: 40, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "home_team_id"
-    t.integer  "away_team_id"
+    t.string   "name",       limit: 40, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|

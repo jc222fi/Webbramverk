@@ -4,16 +4,31 @@ class Api::V1::TeamsController < ApplicationController
   respond_to :json
 
   def index
-    teams = Team.all
     
-    response.status = 200
-    render :json => teams
+    if team_params[:offset] == nil || team_params[:limit] == nil
+      response.status = 400
+      render :json => {message: 'Please enter limit and offset parameters'}
+      
+    else
+      
+      teams = Team.order('created_at DESC').limit(team_params[:limit]).offset(team_params[:offset])
+    
+      teams.each do |team|
+        team.href = api_v1_team_url(team.id)
+      end
+      response.status = 200
+      render :json => teams, methods: [:href]
+      
+    end
   end
 
   def show
     team = Team.find(params[:id])
-    response.status = 200
-    render :json => team
+    team.href = api_v1_team_url(team.id)
+      response.status = 200
+      render :json => {
+          :teams => [team],
+      }, methods: [:href]
   end
 
   def create
@@ -21,7 +36,10 @@ class Api::V1::TeamsController < ApplicationController
 
     if team.save
       response.status = 201
-      render :json => team
+      team.href = api_v1_team_url(team.id)
+      render :json => {
+          :teams => [team],
+      }, methods: [:href]
     else
       response.status = 400
       render :json => {message: 'Team already exists'}
@@ -36,7 +54,10 @@ class Api::V1::TeamsController < ApplicationController
     else
       team.update(team_params)
       response.status = 200
-      render :json => team
+      team.href = api_v1_team_url(team.id)
+      render :json => {
+          :teams => [team],
+      }, methods: [:href]
     end
   end
 
@@ -54,7 +75,7 @@ class Api::V1::TeamsController < ApplicationController
   
   private
   def team_params
-    params.permit(:name)
+    params.permit(:name, :limit, :offset)
   end
   def update_destroy_params
     params.permit(:id)

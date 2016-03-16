@@ -4,8 +4,8 @@ class CreateTeams < ActiveRecord::Migration
       t.string 'name', :limit => 40, :null => false
       t.timestamps null: false
       
-      t.references :home_team
-      t.references :away_team
+      #t.references :home_team
+      #t.references :away_team
 
     end
   end
