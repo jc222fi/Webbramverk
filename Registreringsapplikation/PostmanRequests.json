@@ -1,0 +1,829 @@
+{
+	"id": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+	"name": "BasketCase",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "f5ac8799-42eb-9f7a-2670-900001c5c843",
+			"name": "Games",
+			"description": "",
+			"order": [
+				"f58cbe47-acd8-d1f7-65aa-24cfe1537101",
+				"afcf7e43-7723-c5c6-c8a8-d5cb24d2b90d",
+				"ce59b586-1922-4755-9774-2b7c128e1364",
+				"8b224546-73f2-df6f-1b97-8b28cb95c3e5",
+				"3fc5cffb-8897-2b4c-b6a0-c7e0c2e248e7",
+				"3634e483-d133-9a5e-61f1-006fad72f31a",
+				"c91b88e7-0891-685c-e51a-69e215517a53"
+			],
+			"owner": 0
+		},
+		{
+			"id": "b86c6b72-5286-f18c-2c13-7899ae47adaf",
+			"name": "Locations",
+			"description": "",
+			"order": [
+				"d79a88e6-e957-d8a2-3032-eb7a4ee0dc3a",
+				"20aef958-2e69-f6e4-86c1-cda39bea4183",
+				"8927aefa-0b90-999f-b11c-29148684e737",
+				"77d73122-e0c6-a101-e977-a436c1d3963c",
+				"d33e83d4-ce68-aa8b-b0e7-bc2da86575f9"
+			],
+			"owner": 0
+		},
+		{
+			"id": "dc26c07e-e6b5-68b6-b011-b8810c428bec",
+			"name": "Tags",
+			"description": "",
+			"order": [
+				"9c2c553b-691a-13d1-cc4f-e965d6cd28b0",
+				"f63841d7-9a7f-45e1-2593-c4cc16d11520",
+				"fcab7192-a96d-dfab-a348-5679dee51c30",
+				"856bd131-282c-8fa3-4c49-64e2fa182548",
+				"b8d27acd-edbc-8afa-28cf-65f7255c7ff9"
+			],
+			"owner": 0
+		},
+		{
+			"id": "80d5b445-e8b3-bd4b-5dd5-6399a793975e",
+			"name": "Teams",
+			"description": "",
+			"order": [
+				"a330b6cf-90a0-256f-e049-4baff9af299f",
+				"6f2891a1-e95e-d0d9-c76d-1514b17078bf",
+				"d03af823-4a53-39e9-26f9-59bf7d98a337",
+				"d3b4e90d-7fcf-8aa6-1a7d-dea8784c69e5",
+				"7fb81795-1a5b-7600-a40e-981141a22972"
+			],
+			"owner": 0,
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11"
+		}
+	],
+	"timestamp": 1457049790518,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "20aef958-2e69-f6e4-86c1-cda39bea4183",
+			"headers": "X-auth-token: JqHob87T-XyElE9hWXP9cg\nAuthorization: Token token=\"27ae978996c987c11709a461feed5950b67f1754dfd92e32\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/locations",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "name",
+					"value": "Borås bäsket",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Get Locations",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457059256751,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "b86c6b72-5286-f18c-2c13-7899ae47adaf"
+		},
+		{
+			"id": "3634e483-d133-9a5e-61f1-006fad72f31a",
+			"headers": "X-auth-token: fcvHTNLbxTDJPtgg9KpyiA\nAuthorization: Token token=\"216a92f0887c3af13d749cbbeb7afe6440239f8cc1c13c9c\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/games/1/tag/3",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [],
+			"dataMode": "params",
+			"name": "Post AddTagToGame",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458003749826,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f5ac8799-42eb-9f7a-2670-900001c5c843"
+		},
+		{
+			"id": "3fc5cffb-8897-2b4c-b6a0-c7e0c2e248e7",
+			"headers": "X-auth-token: BQL727BWMvXNu6xnlViosg\nAuthorization: Token token=\"7e99fca1a3bdac2fa11cd8160dc26109f200c088b19272fa\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/games/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "home_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "home_score",
+					"value": "77",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_score",
+					"value": "64",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end_user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Put Game",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457996283846,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f5ac8799-42eb-9f7a-2670-900001c5c843"
+		},
+		{
+			"id": "6f2891a1-e95e-d0d9-c76d-1514b17078bf",
+			"headers": "X-auth-token: BQL727BWMvXNu6xnlViosg\nAuthorization: Token token=\"7e99fca1a3bdac2fa11cd8160dc26109f200c088b19272fa\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/teams/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1457996415529,
+			"name": "Delete Team",
+			"description": "",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"responses": []
+		},
+		{
+			"id": "77d73122-e0c6-a101-e977-a436c1d3963c",
+			"headers": "X-auth-token: JqHob87T-XyElE9hWXP9cg\nAuthorization: Token token=\"27ae978996c987c11709a461feed5950b67f1754dfd92e32\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/locations/7",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "address",
+					"value": "Johanna",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Delete Location",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457059593655,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "b86c6b72-5286-f18c-2c13-7899ae47adaf"
+		},
+		{
+			"id": "7fb81795-1a5b-7600-a40e-981141a22972",
+			"headers": "X-auth-token: fcvHTNLbxTDJPtgg9KpyiA\nAuthorization: Token token=\"216a92f0887c3af13d749cbbeb7afe6440239f8cc1c13c9c\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/teams/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "name",
+					"value": "Borås basket",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Put Team",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457998063035,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "80d5b445-e8b3-bd4b-5dd5-6399a793975e"
+		},
+		{
+			"id": "856bd131-282c-8fa3-4c49-64e2fa182548",
+			"headers": "X-auth-token: VRbTZZ-ydUOrid6Enh4vOA\nAuthorization: Token token=\"b14211e53ad8ed3653c0b022a2615fd67392145214f6b3d1\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/tags/2",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "name",
+					"value": "Ladies div25",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Delete Tag",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457061324666,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "dc26c07e-e6b5-68b6-b011-b8810c428bec"
+		},
+		{
+			"id": "8927aefa-0b90-999f-b11c-29148684e737",
+			"headers": "X-auth-token: fcvHTNLbxTDJPtgg9KpyiA\nAuthorization: Token token=\"216a92f0887c3af13d749cbbeb7afe6440239f8cc1c13c9c\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/locations",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "address",
+					"value": "Johanna Larsson",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1457999896707,
+			"name": "Get Location",
+			"description": "",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"responses": []
+		},
+		{
+			"id": "8b224546-73f2-df6f-1b97-8b28cb95c3e5",
+			"headers": "X-auth-token: BQL727BWMvXNu6xnlViosg\nAuthorization: Token token=\"7e99fca1a3bdac2fa11cd8160dc26109f200c088b19272fa\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/games",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "home_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "home_score",
+					"value": "77",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_score",
+					"value": "64",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end_user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Get Games",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457996213981,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f5ac8799-42eb-9f7a-2670-900001c5c843"
+		},
+		{
+			"id": "9c2c553b-691a-13d1-cc4f-e965d6cd28b0",
+			"headers": "X-auth-token: JqHob87T-XyElE9hWXP9cg\nAuthorization: Token token=\"27ae978996c987c11709a461feed5950b67f1754dfd92e32\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/tags",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "name",
+					"value": "Ladies div2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Post Tag",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457059852047,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "dc26c07e-e6b5-68b6-b011-b8810c428bec"
+		},
+		{
+			"id": "a330b6cf-90a0-256f-e049-4baff9af299f",
+			"headers": "X-auth-token: fcvHTNLbxTDJPtgg9KpyiA\nAuthorization: Token token=\"216a92f0887c3af13d749cbbeb7afe6440239f8cc1c13c9c\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/teams/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "home_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "home_score",
+					"value": "77",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_score",
+					"value": "64",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end_user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1457997919858,
+			"name": "Get Team",
+			"description": "",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"responses": []
+		},
+		{
+			"id": "afcf7e43-7723-c5c6-c8a8-d5cb24d2b90d",
+			"headers": "X-auth-token: 1Q-Yn56tAmA6xqGy0ampOA\nAuthorization: Token token=\"3ec5a7a12db749289d03a661979a49236ed0d16fecdd8264\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/games/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [],
+			"dataMode": "params",
+			"name": "Get Game",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457055091918,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f5ac8799-42eb-9f7a-2670-900001c5c843"
+		},
+		{
+			"id": "b8d27acd-edbc-8afa-28cf-65f7255c7ff9",
+			"headers": "X-auth-token: VRbTZZ-ydUOrid6Enh4vOA\nAuthorization: Token token=\"b14211e53ad8ed3653c0b022a2615fd67392145214f6b3d1\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/tags/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "name",
+					"value": "Ladies div1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Put Tag",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457061424960,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "dc26c07e-e6b5-68b6-b011-b8810c428bec"
+		},
+		{
+			"id": "c91b88e7-0891-685c-e51a-69e215517a53",
+			"headers": "X-auth-token: fcvHTNLbxTDJPtgg9KpyiA\nAuthorization: Token token=\"216a92f0887c3af13d749cbbeb7afe6440239f8cc1c13c9c\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/games/search_for/1?limit=3&offset=0",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "home_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "home_score",
+					"value": "77",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_score",
+					"value": "64",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end_user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Get SearchGamesForTeam",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458006377917,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f5ac8799-42eb-9f7a-2670-900001c5c843"
+		},
+		{
+			"id": "ce59b586-1922-4755-9774-2b7c128e1364",
+			"headers": "X-auth-token: 5P5zOqmRDTRYCvA-9vf2vA\nAuthorization: Token token=\"df3d7738762327f67695cee9aba84b040de8e96802366eeb\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/games/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [],
+			"dataMode": "params",
+			"name": "Delete Game",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457991131831,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f5ac8799-42eb-9f7a-2670-900001c5c843"
+		},
+		{
+			"id": "d03af823-4a53-39e9-26f9-59bf7d98a337",
+			"headers": "X-auth-token: BQL727BWMvXNu6xnlViosg\nAuthorization: Token token=\"7e99fca1a3bdac2fa11cd8160dc26109f200c088b19272fa\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/teams",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "home_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "home_score",
+					"value": "77",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_score",
+					"value": "64",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end_user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Get Teams",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457996194445,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "80d5b445-e8b3-bd4b-5dd5-6399a793975e"
+		},
+		{
+			"id": "d33e83d4-ce68-aa8b-b0e7-bc2da86575f9",
+			"headers": "X-auth-token: JqHob87T-XyElE9hWXP9cg\nAuthorization: Token token=\"27ae978996c987c11709a461feed5950b67f1754dfd92e32\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/locations/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "address",
+					"value": "Eiffel Tower",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Put Location",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457059736309,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "b86c6b72-5286-f18c-2c13-7899ae47adaf"
+		},
+		{
+			"id": "d3b4e90d-7fcf-8aa6-1a7d-dea8784c69e5",
+			"headers": "X-auth-token: fcvHTNLbxTDJPtgg9KpyiA\nAuthorization: Token token=\"216a92f0887c3af13d749cbbeb7afe6440239f8cc1c13c9c\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/teams/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Göteborgs basket",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458000064768,
+			"name": "Post Team",
+			"description": "",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"responses": []
+		},
+		{
+			"id": "d79a88e6-e957-d8a2-3032-eb7a4ee0dc3a",
+			"headers": "X-auth-token: 1Q-Yn56tAmA6xqGy0ampOA\nAuthorization: Token token=\"3ec5a7a12db749289d03a661979a49236ed0d16fecdd8264\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/locations",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "address",
+					"value": "EiffelTower",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Post Location",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457050503414,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "b86c6b72-5286-f18c-2c13-7899ae47adaf"
+		},
+		{
+			"id": "f58cbe47-acd8-d1f7-65aa-24cfe1537101",
+			"headers": "X-auth-token: 1Q-Yn56tAmA6xqGy0ampOA\nAuthorization: Token token=\"3ec5a7a12db749289d03a661979a49236ed0d16fecdd8264\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/games",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "home_team_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_team_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "home_score",
+					"value": "57",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "away_score",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end_user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Post Game",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457054187038,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f5ac8799-42eb-9f7a-2670-900001c5c843"
+		},
+		{
+			"id": "f63841d7-9a7f-45e1-2593-c4cc16d11520",
+			"headers": "X-auth-token: JqHob87T-XyElE9hWXP9cg\nAuthorization: Token token=\"27ae978996c987c11709a461feed5950b67f1754dfd92e32\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/tags",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "name",
+					"value": "Ladies div2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Get Tags",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457059908218,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "dc26c07e-e6b5-68b6-b011-b8810c428bec"
+		},
+		{
+			"id": "fcab7192-a96d-dfab-a348-5679dee51c30",
+			"headers": "X-auth-token: JqHob87T-XyElE9hWXP9cg\nAuthorization: Token token=\"27ae978996c987c11709a461feed5950b67f1754dfd92e32\"\n",
+			"url": "https://ettdvfyrahundrafemtio-api-jc222fi.c9users.io/api/v1/tags/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "c90148bd-a682-8f16-8a0c-aeea674fee11",
+			"data": [
+				{
+					"key": "name",
+					"value": "Ladies div2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Get Tag",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1457059922552,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "dc26c07e-e6b5-68b6-b011-b8810c428bec"
+		}
+	]
+}
