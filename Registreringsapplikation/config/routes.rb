@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   
   post '/api/v1/games/:id/tag/:tag_id' => 'api/v1/games#add_tag', :as => :games_add_tag
   delete '/api/v1/games/:id/tag/:tag_id' => 'api/v1/games#remove_tag', :as => :games_remove_tag
+  
+  match '*any' => 'application#options', :via => [:options]
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

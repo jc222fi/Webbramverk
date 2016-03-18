@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user.name = auth["info"]["name"] # could be updated (better check when new logins)
     user.token = auth["credentials"]["token"] # github provider token should not give out
     user.auth_token = SecureRandom.urlsafe_base64(nil, false) # generate a access_key for client to call the API
-    user.token_expires = Time.now + 1.hour
+    user.token_expires = Time.now + 1.week
     user.save
 
     # read back the session
