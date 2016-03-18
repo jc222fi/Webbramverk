@@ -1,4 +1,5 @@
 class Api::V1::LocationsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_filter :restrict_access
   respond_to :json
 
@@ -6,17 +7,32 @@ class Api::V1::LocationsController < ApplicationController
     if params[:search].present?
       locations = Location.near(params[:search], 50, :order => :distance)
     else
-      locations = Location.all
+      
+      if location_params[:offset] == nil || location_params[:limit] == nil
+        response.status = 400
+        render :json => {message: 'Please enter limit and offset parameters'}
+      else
+      
+        locations = Location.order('created_at DESC').limit(location_params[:limit]).offset(location_params[:offset])
+    
+        locations.each do |location|
+          location.href = api_v1_location_url(location.id)
+        end
+        
+        response.status = 200
+        render :json => locations, methods: [:href]
+      end
     end
-    response.status = 200
-    render :json => locations
   end
 
   def show
     if params[:id].present?
-      locations = Location.find(params[:id])
+      location = Location.find(params[:id])
+      location.href = api_v1_location_url(location.id)
       response.status = 200
-      render :json => locations
+      render :json => {
+          :locations => [location],
+      }, methods: [:href]
     else
       response.status = 404
       render :json => {message: 'No locations found'}
@@ -27,8 +43,11 @@ class Api::V1::LocationsController < ApplicationController
     location = Location.new(location_params)
 
     if location.save
+      location.href = api_v1_location_url(location.id)
       response.status = 201
-      render :json => location
+      render :json => {
+          :locations => [location],
+      }, methods: [:href]
     else
       response.status = 400
       render :json => {message: 'Something went wrong, location was not created'}
@@ -41,8 +60,12 @@ class Api::V1::LocationsController < ApplicationController
       response.status = 404
       render :json => {message: 'Location was not found'}
     else
+      location.update(location_params)
+      location.href = api_v1_location_url(location.id)
       response.status = 200
-      render :json => location
+      render :json => {
+          :locations => [location],
+      }, methods: [:href]
     end
   end
 
@@ -60,7 +83,7 @@ class Api::V1::LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:address)
+    params.permit(:address, :limit, :offset)
   end
   def update_destroy_params
     params.permit(:id)

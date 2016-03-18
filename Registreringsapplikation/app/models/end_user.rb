@@ -1,4 +1,7 @@
 class EndUser < ActiveRecord::Base
+  
+  attr_accessor :href
+  
   has_many :games
   def self.create_with_omniauth(provider, uid)
     create! do |user|

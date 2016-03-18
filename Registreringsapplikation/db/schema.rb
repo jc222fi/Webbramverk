@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224003910) do
+ActiveRecord::Schema.define(version: 20160304030717) do
 
   create_table "api_keys", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20160224003910) do
     t.string   "key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "away_teams", force: :cascade do |t|
+    t.string   "name",       limit: 40, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "end_users", force: :cascade do |t|
@@ -30,6 +36,55 @@ ActiveRecord::Schema.define(version: 20160224003910) do
     t.datetime "token_expires"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.integer  "home_score"
+    t.integer  "away_score"
+    t.integer  "end_user_id"
+    t.integer  "location_id"
+    t.integer  "home_team_id"
+    t.integer  "away_team_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "games", ["away_team_id"], name: "index_games_on_away_team_id"
+  add_index "games", ["end_user_id"], name: "index_games_on_end_user_id"
+  add_index "games", ["home_team_id"], name: "index_games_on_home_team_id"
+  add_index "games", ["location_id"], name: "index_games_on_location_id"
+
+  create_table "games_tags", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "tag_id"
+  end
+
+  add_index "games_tags", ["game_id", "tag_id"], name: "index_games_tags_on_game_id_and_tag_id", unique: true
+
+  create_table "home_teams", force: :cascade do |t|
+    t.string   "name",       limit: 40, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name",       limit: 40, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|
